@@ -8,7 +8,14 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
 }
-h1 {
+.hidden {
+  opacity: 0;
+  transition: 1s;
+}
+.show {
+  opacity: 1;
+}
+.title {
   margin: 20px;
   text-align: center;
   color: #fff;
@@ -51,5 +58,48 @@ select {
   border-radius: 5px;
   border: 1px solid #B9154F;
   font-size: 14px;
-
+}
+input:focus,
+select:focus {
+  background-color: #B9154F;
+  color: #fff;
+}
+input:focus::placeholder {
+  color: #fff;
+}
+.btn {
+  background-color: #D0D4D2;
+  padding: 5px;
+  margin: 10px;
+  color: #B9154F;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: grey;
+  color: #fff;
+}
+.biglietto {
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-bottom: 1px solid grey;
+}
+.dettaglio-biglietto {
+  justify-content: flex-start;
+}
+.titolo {
+  border-bottom: 1px solid grey;
+}
+.nome-passeggero {
+  padding: 5px;
+  background-color: grey;
+}
+th,td {
+  text-align: left;
+  padding: 15px;
 }

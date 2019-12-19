@@ -1,21 +1,47 @@
-// alert('Hello World!');
-var numero = parseInt(prompt('inserisci il numero di chilometri'));
-console.log(numero);
-var eta = parseInt(prompt('inserisci la tua eta'));
-console.log(eta);
-var prezzo = numero * 0.21;
-console.log(prezzo);
-var prezzoMinorenni = (prezzo -(prezzo * 20) / 100);
-// console.log(prezzoMinorenni);
-var prezzoOver = (prezzo -(prezzo * 40) / 100);
-// console.log(prezzoOver);
-if (eta < 18) {
-alert(prezzoMinorenni);
-} else if (eta > 65) {
-alert(prezzoOver);
-} else {
-alert(prezzo);
+alert('Ciao');
+var buttonGenera = document.getElementById('genera');
+buttonGenera.addEventListener('click',
+function() {
+  var inputNome = document.getElementById('nome');
+  var nome = inputNome.value;
+  console.log(nome);
+  var inputKm = document.getElementById('km');
+  var kmDaPercorrere = parseInt(inputKm.value);
+  console.log(kmDaPercorrere);
+  var fasciaEtaSelect = document.getElementById('fascia-eta');
+  var fascia = fasciaEtaSelect.value;
+  console.log(fascia);
+  var prezzoKm = 0.21;
+  var prezzoBiglietto = prezzoKm * kmDaPercorrere;
+  console.log(prezzoBiglietto);
+  var offerta = 'Tariffa Standard';
+  if (fascia == 'minorenne') {
+    prezzoBiglietto -= ((prezzoBiglietto * 20) / 100);
+    offerta = 'Sconto Minorenne';
+  } else if (fascia == 'over65') {
+    prezzoBiglietto -= ((prezzoBiglietto * 40) / 100);
+      offerta = 'Sconto Silver';
+  }
+
+  var carrozza = Math.floor(Math.random() * 9) + 1;
+  console.log(carrozza);
+  var cp = Math.floor(Math.random() * (100000 - 90000 + 1) ) + 90000;
+
+  document.getElementById('nome-passeggero').innerHTML = nome;
+  document.getElementById('offerta').innerHTML = offerta;
+  document.getElementById('costo').innerHTML = prezzoBiglietto.toFixed(2);
+  document.getElementById('carrozza').innerHTML = carrozza;
+  document.getElementById('codice').innerHTML = cp;
+  var bigliettoDiv = document.getElementById('biglietto');
+  bigliettoDiv.classList.remove('hidden');
+  bigliettoDiv.classList.add('show');
 }
-document.getElementById('prezzo-base').innerHTML= 'Con un viaggio di 80km, il prezzo base sarà di € '+ prezzo;
-document.getElementById('offertra-young').innerHTML= 'la tua tariffa sarà di € '+ prezzoMinorenni + ' rispetto a € ' + prezzo;
-document.getElementById('offerta-senior').innerHTML='la tua tariffa sarà di € '+ prezzoOver + ' rispetto a € ' + prezzo;
+);
+var buttonAnnulla = document.getElementById('annulla');
+buttonAnnulla.addEventListener('click',
+function() {
+  var bigliettoDiv = document.getElementById('biglietto');
+  bigliettoDiv.classList.add('hidden');
+  bigliettoDiv.classList.remove('show');
+}
+);

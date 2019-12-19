@@ -7,12 +7,12 @@
     <title>biglietto-treno-form</title>
   </head>
   <body>
-    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    <h1 id="titolo" class="title">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
     <div class="form-dati">
       <div class="row">
         <div class="col">
-          <label for="nome-utente">Nome Cognome</label>
-          <input id="nome-utente" type="text" name="nome" placeholder="Inserisci il tuo nome" value="">
+          <label for="nome">Nome Cognome</label>
+          <input id="nome" type="text" name="nome" placeholder="Inserisci il tuo nome" value="">
         </div>
         <div class="col">
           <label for="km">km da percorrere</label>
@@ -28,14 +28,43 @@
           </div>
       </div>
       <div class="row">
-        <button class="btn">Genera</button>
-        <button class="btn">Annulla</button>
+        <button id="genera" class="btn">Genera</button>
+        <button id="annulla" class="btn">Annulla</button>
+      </div>
+    </div>
+    <h2 class="title">IL TUO BIGLIETTO</h2>
+    <div id="biglietto" class="biglietto hidden">
+      <h2 class="titolo">DETTAGLIO PASSAGGERI</h2>
+      <div class="dettaglio-biglietto row">
+        <div class="col nome-passeggero">
+          <h3>NOME PASSEGGERO</h3>
+          <h4 id="nome-passeggero"></h4>
+        </div>
+      <div class="col tabella">
+        <table>
+          <thead>
+            <tr>
+              <th class="Offerta">Offerta</th>
+              <th>Carrozza</th>
+              <th>Codice CP</th>
+              <th>Costo Biglietto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="offerta"></td>
+              <td id="carrozza"></td>
+              <td id="codice"></td>
+              <td id="costo"></td>
+            </tr>
+          </tbody>
+        </table>
 
-
+      </div>
       </div>
     </div>
 
-    <div id="offerta-senior"></div>
-    <!-- <script src="js/script.js" charset="utf-8"></script> -->
+
+    <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
