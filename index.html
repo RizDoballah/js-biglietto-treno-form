@@ -2,19 +2,40 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>biglietto-treno</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>biglietto-treno-form</title>
   </head>
   <body>
-    <h2>Prezzo del biglietto del treno</h2>
-    <h3>Info prezzo</h3>
-    <h4>Prezzo base</h4>
-    <p>Il prezzo del biglietto è definito in base ai km (0.21 € al km)</p>
-    <div id="prezzo-base"></div>
-    <h3>Info Scontistiche</h3>
-    <p>Con l’offerta Young puoi viaggiare con lo sconto del 20% rispetto al prezzo Base.</p>
-    <div id="offertra-young"></div>
-    <p>Con l’offerta Senior puoi viaggiare con lo sconto del 40% rispetto al prezzo Base.</p>
+    <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    <div class="form-dati">
+      <div class="row">
+        <div class="col">
+          <label for="nome-utente">Nome Cognome</label>
+          <input id="nome-utente" type="text" name="nome" placeholder="Inserisci il tuo nome" value="">
+        </div>
+        <div class="col">
+          <label for="km">km da percorrere</label>
+          <input id="km" type="number" name="km" placeholder="Inserisci i Km" value="">
+        </div>
+        <div class="col">
+          <label for="fascia-eta">Fascia d'et&agrave;</label>
+          <select id="fascia-eta"class="" name="">
+            <option value="minorenne">Minorenne</option>
+            <option value="magiorenne">Magiorenne</option>
+            <option value="over65">Over 65</option>
+          </select>
+          </div>
+      </div>
+      <div class="row">
+        <button class="btn">Genera</button>
+        <button class="btn">Annulla</button>
+
+
+      </div>
+    </div>
+
     <div id="offerta-senior"></div>
-    <script src="js/script.js" charset="utf-8"></script>
+    <!-- <script src="js/script.js" charset="utf-8"></script> -->
   </body>
 </html>
